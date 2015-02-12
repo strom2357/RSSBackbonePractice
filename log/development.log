@@ -283,3 +283,665 @@ Processing by Api::EntriesController#index as HTML
   [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "1"]]
   [1m[36mEntry Load (5.9ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 1]]
 Completed 200 OK in 77ms (Views: 9.9ms | ActiveRecord: 8.9ms)
+  [1m[36mFeed Load (13.7ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+  [1m[35mFeed Load (1.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."url" = 'http://lorem-rss.herokuapp.com/feed?unit=second&interval=10' LIMIT 1
+  [1m[36mFeed Load (1.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY "feeds"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (6.9ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 4]]
+  [1m[36mSQL (94.6ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-02-11 23:02:12.376918' WHERE "feeds"."id" = 4[0m
+  [1m[35m (0.5ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-02-11 23:02:28.670727' WHERE "feeds"."id" = 4[0m
+  [1m[35m (0.5ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+  [1m[35mFeed Load (0.7ms)[0m  SELECT "feeds".* FROM "feeds" ORDER BY "feeds"."id" ASC LIMIT 1
+  [1m[36mEntry Load (0.9ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 1]]
+  [1m[35mSQL (326.3ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-02-11 23:03:39.311433' WHERE "feeds"."id" = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (19.6ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695810"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:03:30+00:00\",\"link\":\"http://example.com/test/1423695810\",\"description\":\"Irure ipsum do quis velit velit voluptate in mollit qui anim deserunt officia duis pariatur.\",\"pubDate\":\"2015-02-11T15:03:30-08:00\",\"guid\":\"http://example.com/test/1423695810\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695810"], ["published_at", Wed, 11 Feb 2015 23:03:30 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:03:30+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695800"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:03:20+00:00\",\"link\":\"http://example.com/test/1423695800\",\"description\":\"Consectetur enim reprehenderit pariatur nostrud amet enim duis excepteur tempor ad ex ad et cupidatat.\",\"pubDate\":\"2015-02-11T15:03:20-08:00\",\"guid\":\"http://example.com/test/1423695800\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695800"], ["published_at", Wed, 11 Feb 2015 23:03:20 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:03:20+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695790"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:03:10+00:00\",\"link\":\"http://example.com/test/1423695790\",\"description\":\"Pariatur mollit adipisicing non laborum.\",\"pubDate\":\"2015-02-11T15:03:10-08:00\",\"guid\":\"http://example.com/test/1423695790\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695790"], ["published_at", Wed, 11 Feb 2015 23:03:10 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:03:10+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695780"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:03:00+00:00\",\"link\":\"http://example.com/test/1423695780\",\"description\":\"Nulla officia nulla deserunt velit qui mollit et.\",\"pubDate\":\"2015-02-11T15:03:00-08:00\",\"guid\":\"http://example.com/test/1423695780\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695780"], ["published_at", Wed, 11 Feb 2015 23:03:00 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:03:00+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695770"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:02:50+00:00\",\"link\":\"http://example.com/test/1423695770\",\"description\":\"Deserunt Lorem laborum dolor do ipsum adipisicing aliqua sit.\",\"pubDate\":\"2015-02-11T15:02:50-08:00\",\"guid\":\"http://example.com/test/1423695770\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695770"], ["published_at", Wed, 11 Feb 2015 23:02:50 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:02:50+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695760"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:02:40+00:00\",\"link\":\"http://example.com/test/1423695760\",\"description\":\"Ipsum Lorem fugiat deserunt proident.\",\"pubDate\":\"2015-02-11T15:02:40-08:00\",\"guid\":\"http://example.com/test/1423695760\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695760"], ["published_at", Wed, 11 Feb 2015 23:02:40 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:02:40+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695750"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:02:30+00:00\",\"link\":\"http://example.com/test/1423695750\",\"description\":\"Qui qui sint minim labore occaecat.\",\"pubDate\":\"2015-02-11T15:02:30-08:00\",\"guid\":\"http://example.com/test/1423695750\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695750"], ["published_at", Wed, 11 Feb 2015 23:02:30 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:02:30+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695740"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:02:20+00:00\",\"link\":\"http://example.com/test/1423695740\",\"description\":\"Elit duis et consectetur tempor voluptate est.\",\"pubDate\":\"2015-02-11T15:02:20-08:00\",\"guid\":\"http://example.com/test/1423695740\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695740"], ["published_at", Wed, 11 Feb 2015 23:02:20 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:02:20+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695730"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:02:10+00:00\",\"link\":\"http://example.com/test/1423695730\",\"description\":\"Dolor reprehenderit cillum culpa cillum enim Lorem velit id nisi non adipisicing eiusmod aliquip.\",\"pubDate\":\"2015-02-11T15:02:10-08:00\",\"guid\":\"http://example.com/test/1423695730\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695730"], ["published_at", Wed, 11 Feb 2015 23:02:10 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:02:10+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695720"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:02:00+00:00\",\"link\":\"http://example.com/test/1423695720\",\"description\":\"Enim consequat dolor non eu sit incididunt minim.\",\"pubDate\":\"2015-02-11T15:02:00-08:00\",\"guid\":\"http://example.com/test/1423695720\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695720"], ["published_at", Wed, 11 Feb 2015 23:02:00 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:02:00+00:00"], ["updated_at", Wed, 11 Feb 2015 23:03:39 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (1.2ms)[0m  UPDATE "feeds" SET "updated_at" = '2015-02-11 23:05:11.599092' WHERE "feeds"."id" = 1
+  [1m[36m (0.5ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695910"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:05:10+00:00\",\"link\":\"http://example.com/test/1423695910\",\"description\":\"Aute irure sunt do in dolore voluptate velit ullamco elit ut irure irure est.\",\"pubDate\":\"2015-02-11T15:05:10-08:00\",\"guid\":\"http://example.com/test/1423695910\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695910"], ["published_at", Wed, 11 Feb 2015 23:05:10 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:05:10+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695900"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:05:00+00:00\",\"link\":\"http://example.com/test/1423695900\",\"description\":\"Dolore quis reprehenderit dolore dolore est dolor dolor cillum quis elit aliqua eiusmod quis laboris.\",\"pubDate\":\"2015-02-11T15:05:00-08:00\",\"guid\":\"http://example.com/test/1423695900\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695900"], ["published_at", Wed, 11 Feb 2015 23:05:00 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:05:00+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695890"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:04:50+00:00\",\"link\":\"http://example.com/test/1423695890\",\"description\":\"Do id veniam anim nisi duis est laboris elit mollit Lorem est.\",\"pubDate\":\"2015-02-11T15:04:50-08:00\",\"guid\":\"http://example.com/test/1423695890\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695890"], ["published_at", Wed, 11 Feb 2015 23:04:50 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:04:50+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695880"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:04:40+00:00\",\"link\":\"http://example.com/test/1423695880\",\"description\":\"Sunt culpa quis do non occaecat magna voluptate sunt.\",\"pubDate\":\"2015-02-11T15:04:40-08:00\",\"guid\":\"http://example.com/test/1423695880\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695880"], ["published_at", Wed, 11 Feb 2015 23:04:40 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:04:40+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695870"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:04:30+00:00\",\"link\":\"http://example.com/test/1423695870\",\"description\":\"Eu laboris nisi eiusmod Lorem in eu tempor aliqua veniam.\",\"pubDate\":\"2015-02-11T15:04:30-08:00\",\"guid\":\"http://example.com/test/1423695870\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695870"], ["published_at", Wed, 11 Feb 2015 23:04:30 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:04:30+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695860"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:04:20+00:00\",\"link\":\"http://example.com/test/1423695860\",\"description\":\"Amet cupidatat magna Lorem labore.\",\"pubDate\":\"2015-02-11T15:04:20-08:00\",\"guid\":\"http://example.com/test/1423695860\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695860"], ["published_at", Wed, 11 Feb 2015 23:04:20 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:04:20+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695850"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:04:10+00:00\",\"link\":\"http://example.com/test/1423695850\",\"description\":\"Deserunt fugiat non deserunt adipisicing sunt excepteur consectetur.\",\"pubDate\":\"2015-02-11T15:04:10-08:00\",\"guid\":\"http://example.com/test/1423695850\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695850"], ["published_at", Wed, 11 Feb 2015 23:04:10 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:04:10+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695840"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:04:00+00:00\",\"link\":\"http://example.com/test/1423695840\",\"description\":\"Velit ut elit amet aliquip cupidatat nostrud est officia pariatur id commodo velit.\",\"pubDate\":\"2015-02-11T15:04:00-08:00\",\"guid\":\"http://example.com/test/1423695840\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695840"], ["published_at", Wed, 11 Feb 2015 23:04:00 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:04:00+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695830"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:03:50+00:00\",\"link\":\"http://example.com/test/1423695830\",\"description\":\"Eu duis fugiat ut mollit elit sit.\",\"pubDate\":\"2015-02-11T15:03:50-08:00\",\"guid\":\"http://example.com/test/1423695830\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695830"], ["published_at", Wed, 11 Feb 2015 23:03:50 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:03:50+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423695820"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:03:40+00:00\",\"link\":\"http://example.com/test/1423695820\",\"description\":\"Enim deserunt culpa nostrud qui.\",\"pubDate\":\"2015-02-11T15:03:40-08:00\",\"guid\":\"http://example.com/test/1423695820\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423695820"], ["published_at", Wed, 11 Feb 2015 23:03:40 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:03:40+00:00"], ["updated_at", Wed, 11 Feb 2015 23:05:12 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:05:52 -0800
+
+LoadError - cannot load such file -- /Users/erikstrom/Desktop/news-reader-master/skeleton/config/routes.rb:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:223:in `block in load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:214:in `load_dependency'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:223:in `load'
+  railties (4.0.2) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+  railties (4.0.2) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+  railties (4.0.2) lib/rails/application/routes_reloader.rb:16:in `reload!'
+  railties (4.0.2) lib/rails/application/routes_reloader.rb:26:in `block in updater'
+  activesupport (4.0.2) lib/active_support/file_update_checker.rb:75:in `execute'
+  railties (4.0.2) lib/rails/application/routes_reloader.rb:7:in `execute'
+  railties (4.0.2) lib/rails/application/finisher.rb:81:in `block (2 levels) in <module:Finisher>'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:397:in `_run__1925380563353566307__prepare__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:74:in `prepare!'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:62:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70276973707860/variables" for 127.0.0.1 at 2015-02-11 15:05:52 -0800
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+DEPRECATION WARNING: You didn't set config.secret_key_base. Read the upgrade documentation to learn more about this new config option. (called from call at /Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:06:59 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (1.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "1"]]
+Completed 200 OK in 21ms (Views: 1.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:07:01 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:07:02 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (0.5ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/feeds/1/entries" for 127.0.0.1 at 2015-02-11 15:07:07 -0800
+Processing by Api::EntriesController#index as HTML
+  Parameters: {"feed_id"=>"1"}
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntry Load (3.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 1]]
+Completed 200 OK in 49ms (Views: 19.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:08:35 -0800
+
+SyntaxError - /Users/erikstrom/Desktop/news-reader-master/RSSBackbone/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected tLABEL, expecting keyword_end
+    render :json => Feed.find(params[:id]) include: :latest_entries
+                                                   ^:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__2282540333157066438__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70108323208720/variables" for 127.0.0.1 at 2015-02-11 15:08:35 -0800
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:08:45 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:09:05 -0800
+
+SyntaxError - /Users/erikstrom/Desktop/news-reader-master/RSSBackbone/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected tLABEL, expecting keyword_end
+    render :json => Feed.find(params[:id]) include: :latest_entries
+                                                   ^:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__2282540333157066438__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70108323706240/variables" for 127.0.0.1 at 2015-02-11 15:09:05 -0800
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2015-02-11 15:09:22 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "feeds" SET "updated_at" = '2015-02-11 23:09:22.863437' WHERE "feeds"."id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT "entries"."guid" FROM "entries"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696160"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:09:20+00:00\",\"link\":\"http://example.com/test/1423696160\",\"description\":\"Non aliquip incididunt laboris nostrud et exercitation consectetur.\",\"pubDate\":\"2015-02-11T15:09:20-08:00\",\"guid\":\"http://example.com/test/1423696160\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696160"], ["published_at", Wed, 11 Feb 2015 23:09:20 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:09:20+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696150"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:09:10+00:00\",\"link\":\"http://example.com/test/1423696150\",\"description\":\"Fugiat enim deserunt in proident dolore quis minim ex et aliquip officia.\",\"pubDate\":\"2015-02-11T15:09:10-08:00\",\"guid\":\"http://example.com/test/1423696150\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696150"], ["published_at", Wed, 11 Feb 2015 23:09:10 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:09:10+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696140"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:09:00+00:00\",\"link\":\"http://example.com/test/1423696140\",\"description\":\"Velit laboris velit elit ad sint occaecat velit.\",\"pubDate\":\"2015-02-11T15:09:00-08:00\",\"guid\":\"http://example.com/test/1423696140\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696140"], ["published_at", Wed, 11 Feb 2015 23:09:00 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:09:00+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696130"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:08:50+00:00\",\"link\":\"http://example.com/test/1423696130\",\"description\":\"Voluptate do consequat pariatur amet in nisi aliqua anim fugiat reprehenderit.\",\"pubDate\":\"2015-02-11T15:08:50-08:00\",\"guid\":\"http://example.com/test/1423696130\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696130"], ["published_at", Wed, 11 Feb 2015 23:08:50 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:08:50+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696120"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:08:40+00:00\",\"link\":\"http://example.com/test/1423696120\",\"description\":\"Esse laboris labore sunt minim sit dolore dolore Lorem ipsum nostrud.\",\"pubDate\":\"2015-02-11T15:08:40-08:00\",\"guid\":\"http://example.com/test/1423696120\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696120"], ["published_at", Wed, 11 Feb 2015 23:08:40 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:08:40+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696110"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:08:30+00:00\",\"link\":\"http://example.com/test/1423696110\",\"description\":\"Labore officia ullamco dolore aliqua in culpa voluptate velit culpa quis culpa esse.\",\"pubDate\":\"2015-02-11T15:08:30-08:00\",\"guid\":\"http://example.com/test/1423696110\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696110"], ["published_at", Wed, 11 Feb 2015 23:08:30 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:08:30+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696100"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:08:20+00:00\",\"link\":\"http://example.com/test/1423696100\",\"description\":\"Nulla sunt sit id officia amet commodo aute eu sint sunt non exercitation.\",\"pubDate\":\"2015-02-11T15:08:20-08:00\",\"guid\":\"http://example.com/test/1423696100\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696100"], ["published_at", Wed, 11 Feb 2015 23:08:20 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:08:20+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696090"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:08:10+00:00\",\"link\":\"http://example.com/test/1423696090\",\"description\":\"Sint sit exercitation voluptate voluptate minim nostrud.\",\"pubDate\":\"2015-02-11T15:08:10-08:00\",\"guid\":\"http://example.com/test/1423696090\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696090"], ["published_at", Wed, 11 Feb 2015 23:08:10 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:08:10+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696080"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:08:00+00:00\",\"link\":\"http://example.com/test/1423696080\",\"description\":\"Duis mollit consectetur do voluptate duis magna excepteur quis velit officia exercitation deserunt in.\",\"pubDate\":\"2015-02-11T15:08:00-08:00\",\"guid\":\"http://example.com/test/1423696080\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696080"], ["published_at", Wed, 11 Feb 2015 23:08:00 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:08:00+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1423696070"], ["json", "{\"title\":\"Lorem ipsum 2015-02-11T23:07:50+00:00\",\"link\":\"http://example.com/test/1423696070\",\"description\":\"Culpa consequat culpa adipisicing eu anim laborum consequat esse.\",\"pubDate\":\"2015-02-11T15:07:50-08:00\",\"guid\":\"http://example.com/test/1423696070\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1423696070"], ["published_at", Wed, 11 Feb 2015 23:07:50 UTC +00:00], ["title", "Lorem ipsum 2015-02-11T23:07:50+00:00"], ["updated_at", Wed, 11 Feb 2015 23:09:23 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1[0m  [["feed_id", 1]]
+Completed 200 OK in 346ms (Views: 322.0ms | ActiveRecord: 17.1ms)
+DEPRECATION WARNING: You didn't set config.secret_key_base. Read the upgrade documentation to learn more about this new config option. (called from call at /Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-11 19:56:25 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (17.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 240ms (Views: 239.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:27 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 19:56:27 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:27 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:27 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:27 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:27 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:27 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-11 19:56:33 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-11 21:08:13 -0800
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 349ms (Views: 348.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-11 21:08:14 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 21:09:32 -0800
+
+
+Started POST "/api/feeds" for 127.0.0.1 at 2015-02-11 21:14:58 -0800
+Processing by Api::FeedsController#create as JSON
+  Parameters: {"feed"=>{}}
+Completed 400 Bad Request in 1ms
+
+ActionController::ParameterMissing - param not found: feed:
+  actionpack (4.0.2) lib/action_controller/metal/strong_parameters.rb:173:in `require'
+  app/controllers/api/feeds_controller.rb:22:in `feed_params'
+  app/controllers/api/feeds_controller.rb:11:in `create'
+  actionpack (4.0.2) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:383:in `_run__3088793430312983158__process_action__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.2) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/conditionalget.rb:35:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4240481695975143173__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+   () Users/erikstrom/.rvm/gems/ruby-2.1.2@global/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/erikstrom/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+  [1m[36mFeed Load (51.8ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "feeds"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "feeds"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-11 22:09:56 -0800
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 390ms (Views: 389.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-11 22:09:57 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 155ms (Views: 154.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-11 22:13:40 -0800
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-02-11 22:16:01 -0800
+Processing by Api::FeedsController#index as HTML
+  [1m[35mFeed Load (374.0ms)[0m  SELECT "feeds".* FROM "feeds"
+Completed 200 OK in 768ms (Views: 393.4ms | ActiveRecord: 374.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-11 22:16:06 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+Processing by StaticPagesController#index as HTML
+  Rendered static_pages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 153ms (Views: 153.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-11 22:22:01 -0800
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-02-11 22:22:25 -0800
+Processing by Api::FeedsController#index as JSON
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms)
